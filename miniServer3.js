@@ -11,13 +11,13 @@ const cookieSession = require('cookie-session'); // for login
 const GoogleStrategy = require('passport-google-oauth20'); // for login
 
 const port = 53509;
-const APIkey = "AIzaSyAlXyqrOQeBQtVkfvu8jFB-wuCAP30U7I0";
+const APIkey = "AIzaSyCuo1SmsppvHaz6PyNwThI4Bd8z2Xi0HCQ";
 const url = "https://translation.googleapis.com/language/translate/v2?key=" + APIkey;
 const flashcardsDB = 'Flashcards.db';
 const usersDB = 'Users.db';
 const googleLoginData = {
-  clientID: '861256240956-2en7bh44hrs5ouetabho08clipig8qq8.apps.googleusercontent.com',
-  clientSecret: 'AgKIoP9I1nblM9tLsThyFay4',
+  clientID: '84487969975-j1721ggj26daev1g9nahqrl16lr4vo8e.apps.googleusercontent.com',
+  clientSecret: 'amjqhtDZWar6vTf60TmB6-hl',
   callbackURL: '/auth/redirect'
 };
 
@@ -49,10 +49,19 @@ app.get('/user/translate', translateHandler);
 app.get('/user/store', storeHandler);
 app.get('/user/flashcard', sendFlashcard); // /user/flashcard or /user/flashcard?last=X
 app.get('/user/update', updateDB); // /user/update?fid=X&correct=X
-app.use(fileNotFound);
+app.use(redirectUnmatched); 
+app.use(fileNotFound);  
 app.listen(port, function() {
   console.log('Listening...');
 })
+
+/*
+ * Redirect
+ */
+
+function redirectUnmatched(req, res) {
+  res.redirect("http://thanhvle.ml:53509/user/lango.html");
+}
 
 
 /*
