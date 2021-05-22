@@ -1,0 +1,247 @@
+main {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+p {
+  color: white;
+  font: normal 15px helvetica;
+  margin: auto;
+}
+
+input:focus{
+    outline: none;
+}
+
+.button {
+  border-radius: 7px;
+  box-shadow: 0 0 5px grey;
+  display: flex;
+  margin-top: 1.5vh;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 4px rgb(70,70,70);
+}
+
+#header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 2vh 5vw;
+}
+
+.button_blue {
+  position: absolute;
+  background: rgb(96,107,155);
+  height: 32px;
+  padding: 0 10px;
+  transform: translate(-10%);
+}
+
+.logo {
+  color: rgb(96,107,155);
+  font: 900 43px 'Raleway', sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+#content {
+  flex-grow: 1;
+  padding-top: 3vh;
+  margin: auto;
+}
+
+.review {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 2vh;
+  padding-top: 6vh;
+}
+
+.create {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2vh;
+}
+
+.card_reload {
+  position: relative;
+}
+
+.flipable {
+  cursor: pointer;
+}
+
+.create .card_back {
+  display: none;
+}
+
+.flipable .card_front{
+ position:relative;
+ -webkit-transform: perspective( 600px ) rotateY( 0deg );
+ transform: perspective( 600px ) rotateY( 0deg );
+ -webkit-backface-visibility: hidden;
+ backface-visibility: hidden;
+ transition: -webkit-transform .5s linear 0s;
+ transition: transform .5s linear 0s;
+}
+
+.flipable .card_back{
+ position:absolute;
+ -webkit-transform: perspective( 600px ) rotateY( -180deg );
+ transform: perspective( 600px ) rotateY( -180deg );
+ -webkit-backface-visibility: hidden;
+ backface-visibility: hidden;
+ transition: -webkit-transform .5s linear 0s;
+ transition: transform .5s linear 0s;
+}
+
+.flipable.active .card_front{
+ -webkit-transform: perspective( 600px ) rotateY( 180deg );
+ transform: perspective( 600px ) rotateY( 180deg );
+}
+
+.flipable.active .card_back{
+ -webkit-transform: perspective( 600px ) rotateY( 0deg );
+ transform: perspective( 600px ) rotateY( 0deg );
+}
+
+.reload {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  right: 0;
+  margin: 5px 5px 0 0;
+  z-index: 99;
+}
+
+.create .reload {
+  display: none;
+}
+
+.card input {
+  font: normal 23px helvetica;
+  border: 2px solid rgb(150,150,150);
+  text-align: center;
+  height: 30vh;
+  width: 70vw;
+  max-width: 700px;
+}
+
+.review #japanese {
+  cursor: pointer;
+}
+
+#card_reveal {
+  font: normal 23px helvetica;
+  display: flex;
+  border: 2px solid rgb(150,150,150);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  width: 70vw;
+  max-width: 700px;
+}
+
+#answerbox {
+  background-color: #D6FFB2;
+  width: 250px;
+  height: 50px;
+  border: 3px solid #51af00;
+  padding: 50px;
+  margin: 20px;
+  color: #51af00;
+  font-weight: bold;
+}
+
+.review #english {
+  height: 10vh;
+}
+
+.gap {
+  margin-top: 3vh;
+}
+
+.button_green {
+  background: rgb(112,199,169);
+  height: 32px;
+  width: 70px;
+  margin-left: auto;
+}
+
+#footer {
+  display: flex;
+  flex-shrink: 0;
+  height: 37px;
+  width: 100%;
+  background: rgb(96,107,155);
+}
+
+#footer p {
+  color: white;
+  font: normal 18px helvetica;
+  margin: auto;
+}
+
+@media screen and (min-width: 700px) {
+  p {
+    font: normal 20px helvetica;
+  }
+
+  #content {
+    padding-top: 12vh;
+  }
+
+  .button_blue {
+    height: 45px;
+    padding: 0 20px;
+    transform: translate(0);
+  }
+
+  .logo {
+    font: 900 70px 'Raleway', sans-serif;
+  }
+
+  .review {
+    padding-top: 0;
+  }
+
+  .create {
+    flex-direction: row;
+  }
+
+  .reload {
+    height: 40px;
+    width: 40px;
+  }
+
+  .card input {
+    font: normal 28px helvetica;
+  }
+
+  .create .card input {
+    height: 40vh;
+    width: 44vw;
+    max-width: 500px;
+  }
+
+  .create .gap {
+    margin-top: 0px;
+    margin-left: 2vw;
+  }
+
+  .button_green {
+    height: 40px;
+    width: 90px;
+  }
+
+  #footer p {
+    font: normal 22px helvetica;
+  }
+}

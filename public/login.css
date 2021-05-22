@@ -1,0 +1,114 @@
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+img {
+  height: 100%;
+}
+
+p {
+  color: white;
+  font: normal 15px helvetica;
+  margin: auto;
+}
+
+#landingPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+#landingPage h1 {
+  color: white;
+  font: 900 11.5vw 'Raleway', sans-serif;
+}
+
+#landingPage h2 {
+  color: rgb(112, 199, 169);
+  font: 300 5.5vw 'Open Sans', sans-serif;
+  padding-top: 3vh;
+}
+
+.welcome {
+  background: linear-gradient(#606B9B, #B191D4);
+  display: flex;
+  height: 70%;
+}
+
+.welcome_text {
+  margin: auto;
+}
+
+.welcome_other {
+  background: white;
+  display: flex;
+  height: 30%;
+}
+
+.button_login {
+  background: #70C7A9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding: 10px 15px;
+  height: 30px;
+  width: 200px;
+}
+
+.button_login:hover {
+  box-shadow: 0 0 3px 1px rgb(70,70,70);
+}
+
+.button_login p{
+  color: white;
+  font: normal 18px helvetica;
+  margin: auto 0 auto 0;
+  padding-left: 10px;
+}
+
+@media screen and (min-width: 700px) {
+  .button_login {
+    height: 40px;
+    width: 250px;
+  }
+
+  .button_login p{
+    font: normal 22px helvetica;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #landingPage {
+    flex-direction: row;
+  }
+
+  #landingPage h1 {
+    font-size: 5vw;
+  }
+
+  #landingPage h2 {
+    font-size: 2.5vw;
+  }
+
+  .welcome {
+    height: 100%;
+    width: 50%;
+  }
+
+  .welcome_other {
+    height: 100%;
+    width: 50%;
+  }
+}
